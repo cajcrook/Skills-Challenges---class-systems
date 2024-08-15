@@ -53,11 +53,40 @@ Test show all Todos that are incomplete (false)
 """
 def test_to_return_all_incomplete():
     todolist = TodoList()
-    todo_1 = Todo("Taske_1", False)
-    todo_2 = Todo("Taske_2", False)
-    todo_3 = Todo("Taske_3", True)
+    todo_1 = Todo("Task_1", False)
+    todo_2 = Todo("Task_2", False)
+    todo_3 = Todo("Task_3", True)
     todolist.add(todo_1)
     todolist.add(todo_2)
     todolist.add(todo_3)
-    assert todolist.incomplete == ["Task_1", "Task_2"]
+    assert todolist.incomplete() == ["Task_1", "Task_2"]
 
+"""
+class TodoList
+def complete()
+Test show all Todos that are complete (true)
+"""
+def test_to_return_all_complete():
+    todolist = TodoList()
+    todo_1 = Todo("Task_1", False)
+    todo_2 = Todo("Task_2", True)
+    todo_3 = Todo("Task_3", True)
+    todolist.add(todo_1)
+    todolist.add(todo_2)
+    todolist.add(todo_3)
+    assert todolist.complete() == ["Task_2", "Task_3"]
+
+"""
+class TodoList
+def give_up()
+Give up and mark all todos as complete (true)
+"""
+def test_mark_all_as_complete():
+    todolist = TodoList()
+    todo_1 = Todo("Task_1", False)
+    todo_2 = Todo("Task_2", False)
+    todo_3 = Todo("Task_3", True)
+    todolist.add(todo_1)
+    todolist.add(todo_2)
+    todolist.add(todo_3)
+    assert todolist.give_up
